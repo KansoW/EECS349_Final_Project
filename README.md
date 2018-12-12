@@ -27,7 +27,36 @@ This figure shows how influencial that the attribute **_avg_dist_** (average sho
 * **Supporting Centers :** They are usually the big guy in the center of an offense-defense sequence. They don't really have a lot of soft touch that they could score themselves. Rather, they are very athletic and are good at post defense and very-close shot or dunks. During offense, they are the finisher of the pass from their point guard. During defense, they are the perfect rim protector and best help-defender.They will have very high clsoe-up shooting and dunk percentage, very high rebounding and block ratings.
 * **Versatile Forwards :** They are today's basketball games' favorite player type. Because they have a post player's height and physics, along with a deep shooting range. They are nightmares to defenders because they can almost score anywhere on the court. Defenders are afraid to leave them out on the perimeter so they have to follow them out. But then the post area is left open for other offense players to drive in easily. They have a fairly higher long distance shooting range than most post players and a much higher defensive rebound rating than offensive rebound rating, due to being on the perimeter for a lot of time during offense.
 
-### Data Preparation
-##### As for the data, I used a datset with more than 650 players, scraped from [basketball-reference.com](https://www.basketball-reference.com/play-index/), which is the best basketball data analyzing source that are free to public.This dataset contains a total of 56 categories, thus 56 attributes. I did a lot of tries to eliminate somee attributes that I think are not relevant based on my experience, and I did some comparisons. I'll explain later about this study.
-##### Because I decided to use Weka for the model training, I wrote a python code that can **eliminate or choose** the attributes I don't want from the **csv** file and convert into the **arff** file that Weka can use.
+### _Data Preparation:_
+##### As for the data, I used a datset with more than 650 players, scraped from [basketball-reference.com](https://www.basketball-reference.com/play-index/), which is the best basketball data analyzing source that are free to public.This dataset contains a total of 67 categories, thus **67 attributes**. I did a lot of tries to eliminate somee attributes that I think are not relevant based on my experience (about 11 in total), and I did some comparisons. I'll explain below about this study.
 
+##### Because I decided to use Weka for the model training, I wrote a [python script](https://github.com/KansoW/EECS349_Final_Project/blob/master/convert_arff.py) that can **eliminate or select** the attributes I don't want from the **csv** file and convert into the **arff** file that Weka can use. This way I can try to eliminate differnet "non-relevant" attributes evry time and see if my prediction based on basketball knowledge is accurate. 
+
+##### The attributes I think that are non-relevant and have eliminatedare:
+* **Status:** whether the player is active or inactive (retired or not currently playing for any team)
+* **g :** career games played 
+* **mp :** career games played
+* **TOV :** career tornovers total count
+* **TOV% :** turnovers per 100 plays
+* **OWS :** offensive win share
+* **DWS :** defensive win share
+* **WS :** total win share
+* **WS/48 :** win share per 48 minuts (almost per game)
+* **fg3a_heave :** feild goal 3-pointers attempted from beyond half court distance
+* **fg3_heave :** field goal 3-pointers made from beyond half court distance
+
+### _Results:_
+##### **With all 11 attributes non-relevant eliminated:**
+##### Here are the results from MLP, SMO, RF and NB, all with 10-fold cross-validation:
+![MLP_full](https://github.com/KansoW/EECS349_Final_Project/blob/master/images/MLP_full.png)
+Figure 1. Multilayer Perceptron
+![SMO_full](https://github.com/KansoW/EECS349_Final_Project/blob/master/images/SMO_full.png)
+Figure 2. SMO
+![RF_full](https://github.com/KansoW/EECS349_Final_Project/blob/master/images/RF_full.png)
+Figure 3. Random Forest
+![NB_full](https://github.com/KansoW/EECS349_Final_Project/blob/master/images/NaiveBayes_full.png)
+Figure 4. Naive Bayes
+
+##### I also did another version with *TOV* and *TOV%* added back to the list to be considered during the training. Here are the results of MLP and SMO:
+![MLP_TOV]()
+![SMO_TOV]()
