@@ -70,10 +70,9 @@ def extractAttr(dataframe):
 
 if __name__ == "__main__":
     ## put "Player" on the first
-    sel_attr = ["Player", "Status", "Pos", "X1", "g"]
-    sel_attr = ["X1", "X2"]
+    sel_attr = ["Player", "Status", "Pos", "g"]
     del_attr = ["Status", "g", "mp", "TOV", "TOV%", "OWS", "DWS", "WS", "WS/48", "fg3a_heave", "fg3_heave"]
 
-    nba_df = pd.read_csv("nbaStats_modified.csv")
+    nba_df = pd.read_csv("nbaStats_m.csv")
     # print(nba_df.head(5))
     generateArff(nba_df, del_attr, mode="delete")
