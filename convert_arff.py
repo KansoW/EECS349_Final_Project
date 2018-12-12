@@ -69,7 +69,7 @@ def extractAttr(dataframe):
 
 
 if __name__ == "__main__":
-    ## put "Player" on the first
+    ## user decides whether to select useful attributes or to delete useless attributes
     sel_attr = ["Player", "Status", "Pos", "g"]
     del_attr = ["Status", "g", "mp", "TOV", "TOV%", "OWS", "DWS", "WS", "WS/48", "fg3a_heave", "fg3_heave"]
 
