@@ -1,7 +1,7 @@
 @relation training
 
-@attribute 'Pos' {PG, C, PF, SG, SF}
-@attribute 'labels' {ComboGuard, ShootingWing, FloorGeneral, SupportingCenter, VersatileForward, ScoringCenter, ScoringWing, 3-and-D-Wing}
+@attribute 'Pos' {C, PG, SG, SF, PF}
+@attribute 'labels' {ShootingWing, VersatileForward, 3-and-D-Wing, ScoringCenter, FloorGeneral, ComboGuard, SupportingCenter, ScoringWing}
 @attribute 'fg_pct' numeric
 @attribute 'avg_dist' numeric
 @attribute 'fg2a_pct_fga' numeric

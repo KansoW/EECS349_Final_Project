@@ -70,7 +70,7 @@ def extractAttr(dataframe):
 
 if __name__ == "__main__":
     ## user decides whether to select useful attributes or to delete useless attributes
-    sel_attr = ["Player", "Status", "Pos", "g"]
+    sel_attr = ["Status", "Pos", "fg_pct", "avg_dist"]
     del_attr = ["Status", "g", "mp", "OWS", "DWS", "WS", "WS/48", "fg3a_heave", "fg3_heave"]
 
     nba_df = pd.read_csv("nbaStats_m.csv")

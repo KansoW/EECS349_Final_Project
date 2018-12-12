@@ -31,7 +31,7 @@ This figure shows how influencial that the attribute **_avg_dist_** (average sho
 ---
 
 ### _Data Preparation:_
-##### As for the data, I used a datset with more than 650 players, scraped from [basketball-reference.com](https://www.basketball-reference.com/play-index/), which is the best basketball data analyzing source that are free to public.This dataset contains a total of 67 categories, thus _**67 attributes**_. I did a lot of tries to eliminate somee attributes that I think are not relevant based on my experience (about 11 in total), and I did some comparisons. I'll explain below about this study.
+##### As for the data, I used a datset with more than 650 players, scraped from [basketball-reference.com](https://www.basketball-reference.com/play-index/), which is the best basketball data analyzing source that are free to public.This dataset contains a total of 67 categories, thus _**67 attributes**_. I did a lot of tries to eliminate somee attributes that I think are not relevant based on my experience (about 11 in total), and I did some comparisons. Each player in this set is labeled with one of these 8 positions as ground truth for training. I'll explain below about this study.
 
 ##### Because I decided to use Weka for the model training, I wrote a [python script](https://github.com/KansoW/EECS349_Final_Project/blob/master/convert_arff.py) that can _**eliminate or select**_ the attributes I don't want from the _**csv**_ file and convert into the _**arff**_ file that Weka can use. This way I can try to eliminate differnet "non-relevant" attributes evry time and see if my prediction based on basketball knowledge is accurate. 
 
@@ -75,6 +75,12 @@ Figure 7. SMO with TOV Considered
 ##### _**Scoring Center**_ and _**Supporting Center**_ can be mixed up during the validation. I think it's because that they both have high points per game and 2-pointer shot percentage. They slight difference is that supporting centers have limited ways to score thus much higher close-up 2-pointer shooting percentage. 
 ##### Here's similar relationship with _**Shoorting Wing**_ and _**3-and-D Wing**_. They look like the hardest pair to be differentiated. I think it's also because that they have high 3-pointer shooting percentage due to being _**"wings"**_ (that means they usually play at the perimeter area). But 3-and-D wings usually have slightly lower points made per game and higher defensive ratings than shooting wings because they need to play more defense for the team. Perimeter defense is a very exhausting and low-effective job to do in a team so defensive wings usually do not play too much offense other than mostly shooting open 3-pointers, in today's NBA basketball game.
 ##### I am actually a little surprised that _**Combo Guard**_ and _**Floor General**_ did not seem like a challenge for these training models at all. I expected there would be confusion because they should both have higher assists count and assists percentage than any other positions. But looking back at the visuals for _**AST**_ and _**AST%**_, I understand now:
-![ast_pct]()
+![ast_pct](https://github.com/KansoW/EECS349_Final_Project/blob/master/images/AST_pct.png)
 Figure 8. Assit Percentage Visualized
 ##### Here in the figure we can tell that these two positions truly are the top 2 in assists stats. But one thing I didn't expect is that floor generals still have much higher even than the No.2 combo guards. The fairly smaller weighting of Floor General might also be a factor of this behavior. 
+
+___
+
+### _Conclusion:_
+##### It looks like I have found some classifiers that work really well with this dataset. That means the idea of re-defining basketball players into 8 positions is very feasible. I would expect sports media and statistics analysists for every team would utilize some new strategies and configurations like this to better categorize their players so they can increase the player usage efficiency, thus promoting more efficient players and better games.
+##### If I do have time in the future. I would love to do some _**dimensionality**_ reduction and try to plot these players as dots on a 2D or 3D space, just like what sports analyzers are usually doing right now, only with much fewer attributes. This method will give a better visualized result for everyone to understand.
