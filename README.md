@@ -10,15 +10,13 @@
 
 ##### I found that **ZeroR** and **LibSVM** gave out a very bad accuracy (19.73% and 38.25% respectively), which is expected with only 664 data groups over 55 attributes. Out of the other four classifiers I mentioned above, Multilayer Perceptron and SMO have the best performance (88.55% and 83.28% respectively with non-related attributes eliminated by me). I found that AST (assists), TRB (true rebounds), BLK (blocks), 3PA(3-pointer attemps) and avg_dist (average shot distances) are the most important attributes, which correlates with my expectation based on experience.
 
+![Average Shot Distances Effectiveness Visualized](https://github.com/KansoW/EECS349_Final_Project/blob/master/images/avg_dist.png)
+This figure shows how influencial that the attribute **_avg_dist_** (average shot distance) is on the results of _**labels**_ (8 positions). The center and forward positions tend to have shorter shot distances while guards and wingmen tend to have longer distances. They are better seperated than other attributes.
+
 ---
 
-##### 5, which are Point Guard (**PG**), Shooting Guard (**SG**), Small Forward (**SF**), Power Forward (**PF**), and Center (**C**). 
-
-
-##### Nowadays the game of basketball has emerged and differnent players at the same position might have very different playing style. While vast majority of the players in NBA right now are expected to player no fewer than 2 positions in a game. Categorizing players according to their playing style rather than primarily their physical apperance seems like a mroe reasonable option. So the new 8 categories are:
-##### _3-and-D Wing_ , _Combo Guard_ , _Floor Genral_ , _Scoring Center_ , _Scoring Wing_ , _Shoorting Wing_ , _Supporting Center_ , and _Versatile Forward_ 
-
-
+### _Description:_
+##### Nowadays the game of basketball has emerged and differnent players at the same position might have very different playing style. While vast majority of the players in NBA right now are expected to player no fewer than 2 positions in a game. Categorizing players according to their playing style rather than primarily their physical apperance seems like a mroe reasonable option than the traditional 5, which are Point Guard (**PG**), Shooting Guard (**SG**), Small Forward (**SF**), Power Forward (**PF**), and Center (**C**). So the new 8 categories are:
 
 * **3-and-D Wings :** They mostly shoot 3-pointers and play perimeter-to-rim defense. They usually consists of medium height and fast-lateral-moving SG or SF. They tend to have high 3pt shooting percentage and high defensive ratings.
 * **Combo Guards :** They are usually PGs or SGs who are elite at both scoring and passing. They can setup for teammates and also score themselves. They usually have higher scores and assists per game, and it's a balance.
