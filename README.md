@@ -5,9 +5,10 @@
 ##### Email: weilinma2018@u.northwestern.edu
 
 ### _Abstract:_
-##### This is a very cool task for me because of my enthusiasm in basketball and especially, the NBA (National Basketball Association). I was inspired by several blogs that talk about this idea of re-assigning modern NBA players into 8 categories rather than the traditional 5. I used Weka to try out different classifiers with 10-fold cross-validation. I tried to train the model with **SMO, Random Forest, Multilayer Perceptron, Naive Bayes**, and some others.
+##### This is a very cool task for me because of my enthusiasm in basketball and especially, the NBA (National Basketball Association). I was inspired by several blogs that talk about this idea of re-assigning modern NBA players into 8 categories rather than the traditional 5. I used Weka to try out different classifiers with 10-fold cross-validation. I tried to train the model with **SMO, Random Forest, Multilayer Perceptron, Naive Bayes**, and some others. I decided to eliminate some attributes out of a total of _**58 statistics categories**_ that I don't believe to work well based on my experience of basketball and NBA games. But the results showed that it actually doesn't matter too much.
 
-##### I found that **ZeroR** and **LibSVM** gave out a very bad accuracy (19.73% and 38.25% respectively), which is expected with only 664 data groups over about 50 attributes.   
+
+##### I found that **ZeroR** and **LibSVM** gave out a very bad accuracy (19.73% and 38.25% respectively), which is expected with only 664 data groups over 55 attributes. Out of the other four classifiers I mentioned above, Multilayer Perceptron and SMO have the best performance (88.55% and 83.28% respectively with non-related attributes eliminated by me). I found that AST (assists), TRB (true rebounds), BLK (blocks), 3PA(3-pointer attemps) and avg_dist (average shot distances) are the most important attributes, which correlates with my expectation based on experience.
 
 ---
 
